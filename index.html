@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YearlyUsers-Profit</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.js"></script>
+
+</head>
+<body>
+
+    <div class="input-holder">
+        <div class="revenue card">
+            <h1>Revenue</h1>
+            <form action="">
+                <div class="block">
+                    <p>Launching Users</p>
+                    <div class="value-container" id="slider-value">130</div>
+                </div>
+                <input name="launchingUsers" type="range" id="my-slider" min="0" max="1000" value="130" oninput="slider();">
+                <div class="block">
+                    <p>Price per year</p>
+                    <div class="value-container" id="slider-value1">0</div>
+                </div>
+                <input name="pricePerYear" type="range" id="my-slider1" min="0" max="2500" step="25" value="675" oninput="slider1();">
+                <div class="block">
+                    <p>Yearly user growth</p>
+                    <div class="value-container" id="slider-value2">0</div>
+                </div>
+                <input name="growth" type="range" id="my-slider2" min="0" max="500" value="100" oninput="slider2();">
+                <div class="block">
+                    <p>Yearly user churn</p>
+                    <div class="value-container" id="slider-value3">0</div>
+                </div>
+                <input name="churn" type="range" id="my-slider3" min="0" max="100" value="40" oninput="slider3();"> 
+            </form>
+        </div>
+
+        <div class="costs card">
+            <h1>Costs</h1>
+            <form action="">
+                <div class="block">
+                    <p>Variable cost per user per year</p>
+                    <div class="value-container" id="slider-value4">0</div>
+                </div>
+                <input name="variableCost" type="range" id="my-slider4" min="0" max="2500" step="25" value="400" oninput="slider4();">
+                <div class="block">
+                    <p>Fixed cost per year</p>
+                    <div class="value-container" id="slider-value5">0</div>
+                </div>
+                <input name="fixedCost" type="range" id="my-slider5" min="0" max="1000000" step="10000" value="120000" oninput="slider5();">
+                <div class="block">
+                    <p>Starting cost</p>
+                    <div class="value-container" id="slider-value6">0</div>
+                </div>
+                <input name="startingCost" type="range" id="my-slider6" min="0" max="1000000" step="10000" value="250000" oninput="slider6();">
+                <div class="block">
+                    <p>Year 5 Users:</p>
+                    <div class="result"></div>
+                    <span></span>
+                </div> 
+                <div class="block">
+                    <p>Profit:</p>
+                    <div class="profit"></div>
+                    <span>&#8364;</span>
+                </div> 
+            </form>
+        </div>
+        <div class="card2"></div>
+    </div>
+
+    <div class="buttonContainer">
+        <button class="button-1" role="button" onclick="cal(event)">Calculate</button>
+    </div>
+
+    <div class="container">
+        <div class="graph">
+        <canvas id="myChart" class="canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="slider.js"></script>
+
+
+</body>
+</html>
